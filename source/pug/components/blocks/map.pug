@@ -1,0 +1,18 @@
+mixin map()
+  section.map#map(
+    data-header-theme-class="gainsboro",
+    data-section-animation,
+    data-start="top bottom",
+    data-end="center center",
+    data-toggle-color-class="is-black"
+  )
+    .container(
+      data-animation="opacity: 0, y: 15vh",
+      data-animation-direction="from",
+      data-position="0"
+    )
+      .map__text-wrapper
+        h2.map__title.title Visit us
+        .map__text-description
+          p We&nbsp;invite you to&nbsp;join&nbsp;us on&nbsp;this exciting journey as&nbsp;#[span we&nbsp;celebrate the beauty and diversity of contemporary art]. Visit&nbsp;us at&nbsp;our new gallery and experience the power of&nbsp;art for yourself.
+      .map__ymap#ymap

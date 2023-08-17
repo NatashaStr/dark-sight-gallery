@@ -1,0 +1,57 @@
+.art-picture {
+  padding: size(189px) 0 0;
+
+  @include vp-1023 {
+    padding: size-tablet(60px) 0 size-tablet(55px);
+  }
+
+  @include vp-767 {
+    padding: 0;
+    padding-top: size-mobile(61px);
+  }
+
+  &__image-wrapper {
+    margin: 0;
+  }
+
+  &__parallax-image-wrapper {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: size(12px);
+    height: size(753px);
+
+    @include vp-1023 {
+      height: size-mobile(192px);
+      margin-bottom: size-tablet(20px);
+    }
+
+    @include vp-767 {
+      margin-bottom: size-mobile(20px);
+    }
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 115%;
+      object-fit: cover;
+    }
+  }
+
+  &__image-description {
+    margin: 0;
+    line-height: size(25px);
+    font-size: size(18px);
+    font-style: italic;
+    color: $color-eclipse;
+
+    @include vp-1023 {
+      font-size: size-tablet(18px);
+    }
+
+    @include vp-767 {
+      font-size: size-mobile(18px);
+    }
+  }
+}

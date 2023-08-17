@@ -1,0 +1,56 @@
+.map {
+  padding-top: size(155px);
+
+  @include vp-1023 {
+    padding-top: size(58px);
+  }
+
+  &__title {
+    margin: 0;
+  }
+
+  &__text-description {
+    font-family: $ff-nunito;
+    font-weight: 500;
+    font-size: size(30px);
+    line-height: size(41px);
+    margin-bottom: size(50px);
+
+    @include vp-1023 {
+      font-size: size(20px);
+      line-height: size(27px);
+      margin-bottom: size(22px);
+    }
+
+    span {
+      font-weight: 600;
+    }
+  }
+
+  &__ymap {
+    width: 100%;
+    height: size(605px);
+
+    @include vp-1023 {
+      height: size(155px);
+    }
+
+    ymaps[class*="balloon__close-button"] {
+      transition: opacity $trans-default;
+    }
+
+    ymaps[class*="image"] {
+      transition: background-image 0.3s ease;
+    }
+  }
+
+  &__balloon-img {
+    width: 91px;
+    height: 54px;
+
+    @include vp-1023 {
+      width: 54px;
+      height: 31px;
+    }
+  }
+}

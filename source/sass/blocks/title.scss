@@ -1,0 +1,14 @@
+.title {
+  font-family: $ff-space-grotesk;
+  font-size: size(70px);
+  line-height: size(87px);
+  font-weight: 700;
+  color: $color-default-black;
+
+  @include vp-1023 {
+    @media (max-width: ($vp-1024 - 1px)) {
+      font-size: size(40px);
+      line-height: size(51px);
+    }
+  }
+}

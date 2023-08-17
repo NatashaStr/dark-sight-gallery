@@ -1,0 +1,29 @@
+mixin splitting-block()
+  -
+    const imgProps = {
+      path: 'content',
+      image: 'alone-bench',
+      format: 'webp',
+      width: null,
+      height: null,
+      altText: 'Pure art'
+    }
+
+  section.splitting-block(
+    data-header-theme-class="gainsboro",
+    data-section-animation,
+    data-start="top bottom",
+    data-end="center center",
+    data-toggle-color-class="is-black"
+  )
+    h2.visually-hidden Not just art, pure art
+    .container.splitting-block__container(
+      data-animation="opacity: 0, y: 15vh",
+      data-animation-direction="from",
+      data-position="0"
+    )
+      .splitting-block__inner-wrapper
+        +picture(imgProps.path, imgProps.image, imgProps.format, imgProps.width, imgProps.height, imgProps.altText)
+        p.splitting-block__text
+          span.splitting-block__text-line(data-splitting) not “just” art
+          span.splitting-block__text-line(data-splitting) pure art

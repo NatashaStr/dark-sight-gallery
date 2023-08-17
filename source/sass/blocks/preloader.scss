@@ -1,0 +1,34 @@
+.preloader {
+  width: 100vw;
+  height: calc(var(--vh, 1vh) * 100);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10000;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: $color-default-black;
+
+  &__image-wrapper {
+    opacity: 0;
+  }
+
+  &__image-wrapper svg {
+    display: block;
+    width: size(232px);
+    height: size(136px);
+    image-rendering: high-quality;
+
+    @include vp-1023 {
+      @media (max-width: ($vp-1024 - 1px)) {
+        width: size(111px);
+        height: size(65px);
+      }
+    }
+  }
+}

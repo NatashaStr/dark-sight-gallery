@@ -1,0 +1,211 @@
+.header {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: size(79px);
+  padding: 0;
+
+  background-color: $color-transparent;
+  z-index: 10;
+
+  @include vp-1023 {
+    min-height: min-content;
+  }
+
+  &.transparent {
+    background-color: $color-transparent;
+    transition: background-color $trans-default;
+  }
+
+  &.gainsboro {
+    background-color: $color-gainsboro-20;
+    transition: background-color $trans-default;
+  }
+
+  .container {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+    height: 100%;
+
+    padding-top: size(10px);
+    padding-bottom: size(10px);
+
+    @include vp-1023 {
+      height: size-tablet(82px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      align-self: auto;
+      justify-content: flex-start;
+      padding-top: size-tablet(10px);
+      padding-bottom: size-tablet(10px);
+    }
+
+    @include vp-767 {
+      height: size-mobile(82px);
+      padding-top: size-tablet(10px);
+      padding-bottom: size-tablet(10px);
+    }
+  }
+
+  &.is-closed {
+    .is-white {
+      svg {
+        color: $color-default-white;
+        transition: color $trans-600;
+      }
+    }
+
+    .header__logo {
+      &.is-black {
+        svg {
+          color: $color-default-black;
+          transition: color $trans-600;
+        }
+      }
+    }
+
+    .header__toggle {
+      &.is-black {
+        svg {
+          color: $color-default-black;
+          transition: color $trans-600;
+        }
+      }
+    }
+
+    @include vp-1023 {
+      .container {
+        background-color: $color-transparent;
+        transition: background-color $trans-500, height $trans-600;
+      }
+
+      .main-nav {
+        transform: translateY(-200%);
+        transition: transform $trans-600;
+      }
+    }
+  }
+
+  &.is-opened {
+    .header__logo {
+      &.is-black {
+        svg {
+          color: $color-default-black;
+          transition: color $trans-600;
+        }
+      }
+      &.is-white {
+        svg {
+          color: $color-default-black;
+          transition: color $trans-600;
+        }
+      }
+    }
+
+    .header__toggle {
+      &.is-black {
+        svg {
+          color: $color-default-black;
+          transition: color $trans-600;
+        }
+      }
+
+      &.is-white {
+        svg {
+          color: $color-default-black;
+          transition: color $trans-600;
+        }
+      }
+    }
+
+    @include vp-1023 {
+      .container {
+        height: 100vh;
+        height: calc(var(--vh, 1vh) * 100);
+        height: 100dvh;
+        background-color: $color-default-white;
+        transition: background-color $trans-500, height $trans-600;
+        overflow-y: auto;
+      }
+
+      .main-nav {
+        transition: transform $trans-600;
+      }
+    }
+  }
+
+  &__logo {
+    margin-top: 3px;
+    align-self: center;
+
+    @include vp-1023 {
+      display: block;
+      margin-right: auto;
+      margin-top: 9px;
+      margin-left: 2px;
+    }
+
+    &:focus,
+    &:focus-within {
+      outline: none;
+    }
+
+    svg {
+      width: size(91px);
+      height: size(54px);
+
+      @include vp-1023 {
+        width: size-tablet(91px);
+        height: size-tablet(54px);
+        color: $color-default-black;
+        transition: color $trans-600;
+      }
+
+      @include vp-767 {
+        width: size-mobile(91px);
+        height: size-mobile(54px);
+      }
+    }
+  }
+
+  &__toggle {
+    display: none;
+
+    @include vp-1023 {
+      display: block;
+      position: absolute;
+      right: size-tablet(20px);
+      top: size-tablet(17px);
+      bottom: auto;
+      width: size-tablet(41px);
+      height: size-tablet(41px);
+      background-color: $color-transparent;
+      border: none;
+      color: $color-default-black;
+      cursor: pointer;
+    }
+
+    @include vp-767 {
+      right: size-mobile(20px);
+      top: size-mobile(17px);
+      width: size-mobile(41px);
+      height: size-mobile(41px);
+    }
+
+    svg {
+      @include vp-1023 {
+        position: absolute;
+        left: 0;
+        top: 0;
+        padding: 6px 4.3px;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}

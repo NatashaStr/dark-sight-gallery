@@ -1,0 +1,160 @@
+.footer {
+  padding: size(36px) 0 size(14px);
+  background-color: $color-black-80;
+
+  @include vp-1023 {
+    padding: size-tablet(36px) 0 size-tablet(28px);
+  }
+
+  @include vp-767 {
+    padding: size-mobile(36px) 0 size-mobile(28px);
+  }
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: size(28px) size(50px);
+    color: $color-default-white;
+
+    @include vp-1023 {
+      grid-template-columns: auto;
+      gap: size-tablet(18px) 0;
+    }
+
+    @include vp-767 {
+      gap: size-mobile(17px) 0;
+    }
+  }
+
+  &__text-wrapper {
+    @include vp-767 {
+      margin-bottom: size-mobile(24px);
+    }
+  }
+
+  &__text {
+    margin: 0;
+    margin-bottom: size(15px);
+    font-size: size(24px);
+    font-weight: 600;
+
+    @include vp-1023 {
+      margin-bottom: size(22px);
+    }
+
+    @include vp-767 {
+      margin-bottom: size-mobile(22px);
+    }
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: size(26px);
+    font-family: $ff-nunito;
+    font-size: size(30px);
+    font-weight: 800;
+    line-height: size(41px);
+    color: $color-default-white;
+
+    @include vp-1023 {
+      margin-bottom: 5px;
+    }
+  }
+
+  &__social {
+    padding-right: size(65px);
+    justify-self: end;
+
+    @include vp-1023 {
+      justify-self: start;
+      padding-right: 0;
+    }
+
+    .socials {
+      @include vp-1023 {
+        margin-left: size-tablet(-8px);
+      }
+
+      @include vp-767 {
+        margin-left: size-mobile(-3px);
+      }
+    }
+  }
+
+  &__social-text {
+    margin: 0;
+    margin-bottom: size(10px);
+    font-size: size(24px);
+    line-height: size(32px);
+    font-weight: 600;
+
+    @include vp-1023 {
+      line-height: size-tablet(32px);
+      margin-bottom: size-tablet(6px);
+    }
+
+    @include vp-767 {
+      line-height: size-mobile(32px);
+      margin-bottom: size-mobile(6px);
+    }
+  }
+
+  &__copyright-wrapper {
+    margin-top: -3px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: inherit;
+    grid-column: span 2;
+
+    @include vp-1023 {
+      display: grid;
+      grid-template-columns: auto;
+      grid-column: auto;
+      gap: 0;
+    }
+  }
+
+  &__copyright-container {
+    line-height: size(32px);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    @include vp-1023 {
+      display: block;
+      grid-row: 1;
+      line-height: size-tablet(32px);
+    }
+
+    @include vp-767 {
+      display: block;
+      margin-bottom: 5px;
+      grid-row: 1;
+      line-height: size-mobile(32px);
+    }
+  }
+
+  &__copyright-text {
+    margin: 0;
+    font-size: size(18px);
+    font-weight: 600;
+    text-align: end;
+
+    @include vp-1023 {
+      text-align: start;
+    }
+
+    &--center {
+      align-self: center;
+      text-align: start;
+
+      @include vp-1023 {
+        line-height: size-tablet(25px);
+      }
+
+      @include vp-767 {
+        line-height: size-mobile(25px);
+      }
+    }
+  }
+}

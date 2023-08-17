@@ -1,0 +1,28 @@
+mixin feature()
+  section.feature.sticky(
+    data-header-theme-class="gainsboro",
+    data-section-animation,
+    data-start="top bottom",
+    data-end="center center",
+    data-toggle-color-class="is-black"
+  )
+    .container(
+      data-animation="opacity: 0, y: 15vh",
+      data-animation-direction="from",
+      data-position="0"
+    )
+      .sticky__wrapper.sticky__wrapper--reverse
+        .sticky__image-wrapper
+          .sticky__sticky-block-wrapper.sticky__sticky-block-wrapper--reverse
+            +picture("content", "feature-sticky-image", "jpg", 539, 650, "gallery hall with man who's watching pictures on the walls")
+        .sticky__content-wrapper.sticky__content-wrapper--reverse
+          h2.sticky__title.sticky__title--reverse.title We choose wisely
+          p
+            | Our team of&nbsp;curators are passionate about contemporary art and are committed to discovering and promoting
+            | new talents. They carefully&nbsp;select artists based on&nbsp;their creative vision, originality, and
+            | the relevance of&nbsp;their work to&nbsp;current artistic and cultural trends.
+          +picture("content", "feature-image", "jpg", 721, 440, "gallery hall with lighting installation")
+          p
+            | We&nbsp;believe that art has the power to inspire, challenge, and transform the way we&nbsp;see the world.
+            | Through our exhibitions and events, we hope to create a&nbsp;space where artists and art lovers can connect, share ideas,
+            | and broaden their perspectives.

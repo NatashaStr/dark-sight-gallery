@@ -1,0 +1,62 @@
+doctype html
+
+include ../components
+
+block variables
+
+html(lang="en")
+  head
+    title= title
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible" content="ie=edge")
+    meta(name="description" content="Dark sight gallery")
+    link(rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png")
+    link(rel="icon" type="image/png" sizes="32x32" href="favicon//favicon-32x32.png")
+    link(rel="icon" type="image/png" sizes="16x16" href="favicon//favicon-16x16.png")
+    link(rel="manifest" href="favicon/site.webmanifest" crossorigin="use-credentials")
+    link(rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5")
+    meta(name="msapplication-TileColor" content="#da532c")
+    meta(name="theme-color" content="#ffffff")
+    meta(name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff")
+    meta(name="theme-color" media="(prefers-color-scheme: dark)" content="#000000")
+    link(rel="preload" href="fonts/SpaceGrotesk-Bold.woff2" as="font" crossorigin="anonymous")
+    link(rel="preload" href="fonts/Nunito-Regular.woff2" as="font" crossorigin="anonymous")
+    link(rel="preload" href="fonts/Nunito-Italic.woff2" as="font" crossorigin="anonymous")
+    link(rel="preload" href="fonts/Nunito-Medium.woff2" as="font" crossorigin="anonymous")
+    link(rel="preload" href="fonts/Nunito-SemiBold.woff2" as="font" crossorigin="anonymous")
+    link(rel="preload" href="fonts/Nunito-ExtraBold.woff2" as="font" crossorigin="anonymous")
+    script(src="js/preloader.min.js" defer)
+    script(src="https://api-maps.yandex.ru/2.1/?apikey=d936405a-995c-4d36-a8ee-3beb2b0de53f&lang=en_US" type="text/javascript" defer)
+
+
+    //- При необходимости вы можете добавить разметку Open graf. - const Open graf = true
+    if (openGraf)
+      //- Обязательно измените содержание контента на тот что необходим!
+      //- Введите заголовок
+      meta(property="og:title" content="Лига решений")
+      //- Введите заголовок путь к картинке
+      meta(property="og:image" content="https://24fortest.ru/img/content/sharing.png")
+      //- Введите необходимый тип
+      meta(property="og:type" content="article")
+      //- Введите адрес сайта
+      meta(property="og:url" content="https://24fortest.ru/")
+      //- Введите описание
+      meta(property="og:description" content="Простые и понятные решения в помощь разработчикам от команды Лига А")
+
+    link(rel="stylesheet" href="css/style.min.css")
+
+  body.scroll-lock-ios
+    +preloader()
+    +sprite()
+    .wrapper(class=wrapperMods)
+      if (hasHeader)
+        +header(headerMods, currentUrl)
+
+      block main
+
+      if (hasFooter)
+        +footer(footerMods)
+
+    script(src="js/vendor.min.js" defer)
+    script(src="js/main.min.js" defer)

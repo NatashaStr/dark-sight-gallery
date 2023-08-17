@@ -1,0 +1,45 @@
+.main-nav {
+  margin-left: size(243px);
+  margin-right: auto;
+  align-self: center;
+
+  @include vp-1023 {
+    margin: auto;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+
+    @include vp-1023 {
+      flex-direction: column;
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+  }
+
+  &__item {
+    width: size(201px);
+    margin-right: size(20px);
+    margin-top: size(5px);
+    margin-bottom: size(5px);
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    @include vp-1023 {
+      margin: 0;
+      margin-bottom: size(41px);
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

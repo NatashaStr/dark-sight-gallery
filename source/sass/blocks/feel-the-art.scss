@@ -1,0 +1,70 @@
+.art {
+  padding-top: size(180px);
+
+  @include vp-1023 {
+    padding-top: size-tablet(63px);
+  }
+
+  @include vp-767 {
+    padding-top: size-mobile(63px);
+  }
+
+  &__title {
+    margin: 0;
+    padding: 0;
+    margin-bottom: size(29px);
+
+    @include vp-1023 {
+      margin-bottom: size-tablet(29px);
+    }
+
+    @include vp-767 {
+      margin-bottom: size-mobile(29px);
+    }
+  }
+
+  &__lamp-installation-wrapper {
+    margin-bottom: size(180px);
+    position: relative;
+    overflow: hidden;
+
+    @include vp-1023 {
+      margin-left: 3px;
+      margin-bottom: size-tablet(29px);
+    }
+
+    @include vp-767 {
+      margin-bottom: size-mobile(29px);
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    img {
+      display: block;
+      width: size(1312px);
+      height: size(824px);
+
+      @include vp-1023 {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    svg {
+      position: absolute;
+      top: size(16px);
+      left: size(41px);
+      width: size(1246px);
+      height: size(792px);
+
+      @include vp-1023 {
+        top: 2%;
+        left: 3%;
+        width: 95%;
+        height: auto;
+      }
+    }
+  }
+}

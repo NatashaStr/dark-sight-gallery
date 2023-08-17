@@ -1,0 +1,32 @@
+mixin header(headerMods, currentUrl)
+  -
+    const headerLinks = [
+      {
+        href: "#about",
+        text: "About"
+      },
+      {
+        href: "#exhibitions",
+        text: "Exhibitions"
+      },
+      {
+        href: "#map",
+        text: "Visit us"
+      },
+    ]
+
+  header.header.is-closed(class=headerMods, data-header)
+    .container
+      span.header__logo(aria-label="Dark sight gallery logo", role="img", data-header-logo)
+        +icon("logo", 91, 54)
+      button.header__toggle(type="button", aria-label="Переключатель отображения меню", aria-pressed="false", data-burger)
+        +icon("burger", 34, 30)
+      nav.main-nav
+        ul.main-nav__list
+          each link in headerLinks
+            - const activeState = currentUrl === link.href
+            li.main-nav__item
+              if(activeState)
+                span.main-nav__link.is-active=link.text
+              else
+                a.btn.btn--dark-glass(href=link.href, data-scroll-to-block)=link.text

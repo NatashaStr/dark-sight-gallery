@@ -1,0 +1,30 @@
+mixin about()
+  section.about.sticky#about(
+    data-header-theme-class="gainsboro",
+    data-section-animation,
+    data-start="top bottom",
+    data-end="center center",
+    data-toggle-color-class="is-black"
+  )
+    .container(
+      data-animation="opacity: 0, y: 15vh",
+      data-animation-direction="from",
+      data-position="0"
+    )
+      .sticky__wrapper
+        .sticky__content-wrapper
+          h2.sticky__title.title We are thrilled!
+          p
+            | We&nbsp;are thrilled to&nbsp;announce the opening of&nbsp;our new art gallery,
+            | dedicated exclusively to showcasing contemporary art.
+            | Our gallery aims to&nbsp;provide a&nbsp;platform for emerging artists
+            | from around the world to exhibit their work and engage with a global audience.
+          +picture("content", "about-image", "jpg", 757, 479, "gallery hall with bright lighting")
+          p
+            | At&nbsp;our gallery, visitors can expect to see a diverse range of&nbsp;mediums
+            | including painting, sculpture, installation art, digital art, and more.
+            | We&nbsp;will be&nbsp;featuring both solo and group exhibitions, ensuring that each&nbsp;visit
+            | to&nbsp;our gallery is&nbsp;a&nbsp;unique and exciting experience.
+        .sticky__image-wrapper
+          .sticky__sticky-block-wrapper
+            +picture("content", "about-sticky-image", "jpg", 444, 523, "gallery hall with large pictures on the walls")

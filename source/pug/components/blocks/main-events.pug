@@ -1,0 +1,73 @@
+mixin main-events()
+  -
+    const exhibitionsList = [
+      {
+        imgPath: 'content',
+        imgName: 'exhibitions-1',
+        title: '“Letters speak from my soul” Kamilla\u00A0Crow',
+        datetimeStart: '18.08.23',
+        datetimeEnd: '25.12.23'
+      },
+      {
+        imgPath: 'content',
+        imgName: 'exhibitions-2',
+        title: '“Orange Amsterdam” Nick\u00A0van\u00A0Groobin',
+        datetimeStart: '23.09.23',
+        datetimeEnd: '25.05.24'
+      },
+      {
+        imgPath: 'content',
+        imgName: 'exhibitions-3',
+        title: '“Colorfull nightmares” Michael\u00A0Kors',
+        datetimeStart: '30.09.23',
+        datetimeEnd: '10.11.23'
+      },
+      {
+        imgPath: 'content',
+        imgName: 'exhibitions-4',
+        title: '“Heaven gates” Larry\u00A0O’Brain',
+        datetimeStart: '10.09.23',
+        datetimeEnd: '13.10.23'
+      },
+      {
+        imgPath: 'content',
+        imgName: 'exhibitions-5',
+        title: '“Memories from last summer” Marie\u00A0Eir',
+        datetimeStart: '23.09.23',
+        datetimeEnd: '25.05.24'
+      },
+      {
+        imgPath: 'content',
+        imgName: 'exhibitions-6',
+        title: '“No way” James\u00A0Makavel',
+        datetimeStart: '30.09.23',
+        datetimeEnd: '10.11.23'
+      }
+    ];
+
+  section.main-events#exhibitions(
+    data-header-theme-class="gainsboro",
+    data-section-animation,
+    data-start="top bottom",
+    data-end="center center",
+    data-toggle-color-class="is-black",
+  )
+    .container.main-events__container(
+      data-animation="opacity: 0, y: 15vh",
+      data-animation-direction="from",
+      data-position="0"
+      data-section="horizontal"
+    )
+      h2.main-events__title.title Current exhibitions
+      .main-events__list-wrapper
+        .main-events__buttons-wrapper
+          button.main-events__button.main-events__button--prev
+            +icon('icon-arrow', 62, 16)
+            span.visually-hidden Предыдущий слайд
+          button.main-events__button.main-events__button--next
+            +icon('icon-arrow', 62, 16)
+            span.visually-hidden Следующий слайд
+        ul.main-events__list.swiper-wrapper(data-section="content")
+          each exhibitionItem in exhibitionsList
+            li.main-events__list-item.swiper-slide
+              +event-card(exhibitionItem)

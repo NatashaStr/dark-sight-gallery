@@ -1,0 +1,123 @@
+.main-events {
+  padding-top: size(180px);
+  position: relative;
+
+  &__container {
+    padding: 0 0 0 size(100px);
+    position: sticky;
+    top: size(180px);
+    left: 0;
+    overflow: hidden;
+  }
+
+  &__title {
+    margin: 0 0 size(26px);
+  }
+
+  &__list-wrapper {
+    margin: 0 0 0 size(-100px);
+  }
+
+  &__list {
+    width: max-content;
+    height: 100%;
+    margin: size(12px) 0 0 size(100px);
+    padding: 0;
+    list-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+      width: 0;
+      height: 0;
+    }
+  }
+
+  &__list-item {
+    display: flex;
+    height: auto;
+    width: min-content;
+
+    &:not(:last-child) {
+      margin: 0 size(20px) 0 0;
+    }
+  }
+
+  &__buttons-wrapper {
+    display: none;
+  }
+
+  .swiper-button-disabled svg {
+    fill: $color-taupe-grey;
+  }
+
+  &__button--prev {
+    transform: rotate(180deg);
+    margin: 0 size(34px) 0 0;
+  }
+
+  @include vp-1023 {
+    padding-top: 0;
+    position: static;
+
+    &__container {
+      padding: size-mobile(60px) size-mobile(20px) 0;
+      position: static;
+    }
+
+    &__buttons-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: end;
+      margin-left: auto;
+    }
+
+    &__button {
+      display: flex;
+      height: min-content;
+      background: none;
+      padding: 0;
+      border: none;
+
+      svg {
+        fill: $color-default-black;
+        transition: $trans-default;
+      }
+
+
+      &:active:not(.swiper-button-disabled) {
+        svg {
+          fill: $color-old-lavender;
+          transition: $trans-default;
+        }
+      }
+    }
+
+    &__list {
+      margin: size(12px) 0 0;
+    }
+
+    &__list-wrapper {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    &__list-item:first-child::before,
+    &__list-item:last-child::after {
+      display: none;
+    }
+  }
+
+  @include vp-767 {
+    &__title {
+      margin: 0 0 size-mobile(19px) size-mobile(2px);
+    }
+
+    &__list {
+      overflow: visible;
+    }
+  }
+}

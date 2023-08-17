@@ -1,0 +1,17 @@
+mixin sculptures()
+  section.sculptures(
+    data-header-theme-class="gainsboro",
+    data-section-animation,
+    data-start="top bottom",
+    data-end="center center",
+    data-toggle-color-class="is-black"
+  )
+    .container
+      h2.sculptures__title.visually-hidden Sculptures
+      .sculptures__picture-wrapper
+        .sculptures__bust-wrapper
+          +picture("content", "bust", "png", 424, 565, "white marble sculpture bust")
+        .sculptures__bench-wrapper
+          +picture("content", "bench", "png", 1312, 694, "bench on the grey floor")
+        .sculptures__hand-wrapper
+          +picture("content", "hand", "png", 265, 353, "white marble sculpture hand")

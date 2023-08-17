@@ -1,0 +1,13 @@
+mixin art-picture()
+  section.art-picture(
+    data-header-theme-class="gainsboro",
+    data-section-animation,
+    data-start="top bottom",
+    data-end="center center",
+    data-toggle-color-class="is-black"
+    )
+    .container
+      figure.art-picture__image-wrapper
+        .art-picture__parallax-image-wrapper
+          +picture("content", "dreemland", "jpg", 1312, 753, "")
+        figcaption.art-picture__image-description “Dreamland” Michael Kors, 2019

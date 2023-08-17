@@ -1,0 +1,105 @@
+.sculptures {
+  padding-top: size(180px);
+
+  @include vp-1023 {
+    padding-top: size(30px);
+  }
+
+  &__picture-wrapper {
+    position: relative;
+    overflow-y: hidden;
+    display: flex;
+    justify-content: space-between;
+    width: size(1312px);
+    height: size(694px);
+    margin-bottom: size(180px);
+
+    @include vp-1023 {
+      width: 100%;
+      height: calc(100vw * 0.51);
+      margin-bottom: size(30px);
+    }
+
+    @include vp-767 {
+      width: size(333px);
+      height: size(176px);
+    }
+  }
+
+  &__picture-wrapper:last-child {
+    margin-bottom: 0;
+
+    @include vp-1023 {
+      margin-bottom: 0;
+    }
+  }
+
+  &__hand-wrapper,
+  &__bust-wrapper {
+    z-index: 2;
+  }
+
+  &__bust-wrapper {
+    margin-left: 9%;
+
+    @include vp-767 {
+      margin-left: 12%;
+    }
+  }
+
+  &__bust-wrapper img {
+    opacity: 1;
+    width: size(424px);
+    height: size(525px);
+    object-fit: cover;
+
+    @include vp-1023 {
+      width: calc(100vw * 0.32);
+      height: calc(100vw * 0.43);
+    }
+
+    @include vp-767 {
+      width: size(96px);
+      height: size(128px);
+    }
+  }
+
+  &__hand-wrapper {
+    margin-right: 7%;
+
+    @include vp-767 {
+      margin-right: 9%;
+    }
+  }
+
+  &__hand-wrapper img {
+    width: size(265px);
+    height: size(353px);
+    object-fit: cover;
+
+    @include vp-1023 {
+      width: calc(100vw * 0.2);
+      height: calc(100vw * 0.27);
+    }
+
+    @include vp-767 {
+      width: size(49px);
+      height: size(65px);
+    }
+  }
+
+  &__bench-wrapper {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+  }
+
+  &__bench-wrapper img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+}

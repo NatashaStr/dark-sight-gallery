@@ -1,0 +1,143 @@
+.event-card {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  width: size(424px);
+  position: relative;
+  height: 100%;
+
+  &__picture-box {
+    order: -1;
+    width: size(424px);
+    min-height: 1px;
+    overflow: hidden;
+    padding-top: calc(297 / 424 * 100%);
+    position: relative;
+    margin: 0 0 22px;
+
+    &::before,
+    &::after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      opacity: 0;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      transition: opacity $trans-default;
+    }
+
+    &::before {
+      background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+    }
+
+    &::after {
+      background: linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2));
+    }
+  }
+
+  &__picture-box-inside {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__picture-box-inside img {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__link {
+    color: $color-default-black;
+    font-size: size(30px);
+    line-height: size(41px);
+    font-weight: 500;
+    display: block;
+    margin: 0 0 size(12px);
+    transition: color $trans-default;
+    word-break: break-word;
+    height: auto;
+    min-height: 1px;
+
+    &::before {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 2;
+    }
+
+    @include hover-focus {
+      outline: none;
+      color: $color-old-lavender;
+      transition: color $trans-default;
+
+      & + .event-card__picture-box::before {
+        opacity: 1;
+        transition: opacity $trans-default;
+      }
+
+      & + .event-card__picture-box::after {
+        opacity: 0;
+      }
+    }
+
+    &:active:hover {
+      /* stylelint-disable */
+      color: $color-default-black !important;
+      transition: color $trans-default;
+
+      & + .event-card__picture-box::before {
+        /* stylelint-disable */
+        opacity: 0 !important;
+        transition: opacity $trans-default;
+      }
+
+      & + .event-card__picture-box::after {
+        /* stylelint-disable */
+        opacity: 1 !important;
+        transition: opacity $trans-default;
+      }
+    }
+  }
+
+  &__date {
+    display: contents;
+    font-family: $ff-nunito;
+    font-size: size(18px);
+    line-height: size(25px);
+    font-weight: 400;
+    font-style: italic;
+    color: $color-eclipse;
+  }
+
+  @include vp-1023 {
+    width: 100%;
+
+    &__picture-box {
+      width: 100%;
+      margin: 0 0 size-mobile(15px);
+    }
+
+    picture {
+      display: flex;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  @include vp-767 {
+    &__link {
+      font-size: size-mobile(20px);
+      line-height: size-mobile(27px);
+      margin: 0 0 -5px 1px;
+    }
+  }
+}

@@ -1,0 +1,23 @@
+mixin event-card(cardInfo)
+  -
+    const imageFormat = 'webp';
+    const imageAltText = cardInfo.title;
+    const imageWidth = 424;
+    const imageHeight = 297;
+
+    const convertToUTC = (dateString) => {
+      const [day, month, year] = dateString.split('.');
+      const date = new Date(Date.UTC(`20${year}`, month - 1, day));
+      return date.toISOString().slice(0, 10);
+    }
+    const cardStartTime = cardInfo.datetimeStart ? convertToUTC(cardInfo.datetimeStart) : '';
+    const cardEndTime = cardInfo.datetimeEnd ? convertToUTC(cardInfo.datetimeEnd) : '';
+
+  .event-card
+    a.event-card__link(href='#')
+      span= cardInfo.title
+    .event-card__picture-box
+      .event-card__picture-box-inside
+        +picture(cardInfo.imgPath, cardInfo.imgName, imageFormat, imageWidth, imageHeight, imageAltText)
+    time.event-card__date(datetime=cardStartTime)= cardInfo.datetimeStart + ' - '
+    time.event-card__date(datetime=cardEndTime)= cardInfo.datetimeEnd

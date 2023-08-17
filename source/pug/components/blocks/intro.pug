@@ -1,0 +1,24 @@
+mixin intro()
+  section.intro(
+    data-header-theme-class="transparent",
+    data-toggle-color-class="default"
+  )
+    .container
+      .intro__text-container
+        h1.intro__title Dark sight Art Gallery
+        p.intro__subtitle Dive into the art with us.
+      .intro__swiper.swiper
+        .intro__swiper-wrapper.swiper-wrapper
+          .intro__swiper-slide.swiper-slide
+            +responsive-picture("slides", "intro-1", "jpg", "100%", 730, "")
+          .intro__swiper-slide.swiper-slide
+            +responsive-picture("slides", "intro-2", "jpg", "100%", 730, "")
+          .intro__swiper-slide.swiper-slide
+            +responsive-picture("slides", "intro-3", "jpg", "100%", 730, "")
+          .intro__swiper-slide.swiper-slide
+            +responsive-picture("slides", "intro-4", "jpg", "100%", 730, "")
+          .intro__swiper-slide.swiper-slide
+            +responsive-picture("slides", "intro-5", "jpg", "100%", 730, "")
+          .intro__swiper-slide.swiper-slide
+            +responsive-picture("slides", "intro-6", "jpg", "100%", 730, "")
+        .intro__swiper-pagination.swiper-pagination
